@@ -1,5 +1,3 @@
-'use client';
-
 import { NavLink } from 'react-router-dom';
 import { Scissors, LifeBuoy, LogOut, ChevronsUpDown, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';

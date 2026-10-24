@@ -85,11 +85,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [applySession]);
 
   const register = useCallback(async (payload: Record<string, unknown>): Promise<AuthSession> => {
+    // Registration creates a PENDING access request — no session/token is
+    // issued. The RegisterPage shows the approval modal; the user can sign in
+    // only after an administrator approves the request.
     const res = await api.post('/auth/register', payload);
-    applySession(res.data.data);
-    toast.success('Account created successfully!');
     return res.data.data as AuthSession;
-  }, [applySession]);
+  }, []);
 
   const logout = useCallback(() => {
     localStorage.removeItem(TOKEN_KEY);

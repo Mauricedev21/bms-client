@@ -31,7 +31,20 @@ api.interceptors.response.use(
 export function errorMessage(error: unknown): string {
   if (axios.isAxiosError(error)) {
     const data = error.response?.data as { error?: { message?: string; details?: unknown } } | undefined;
-    if (data?.error?.message) return data.error.message;
+    if (data?.error?.message) {
+      // If there are field-specific validation details, append them
+      if (data.error.details) {
+        const details = data.error.details as Array<{ path: string[]; message: string }>;
+        const fieldErrors = details
+          .map((d) => {
+            const path = d.path[d.path.length - 1];
+            return `${path}: ${d.message}`;
+          })
+          .filter(Boolean);
+        return fieldErrors.length > 0 ? data.error.message + ' — ' + fieldErrors.join(', ') : data.error.message;
+      }
+      return data.error.message;
+    }
     if (error.code === 'ERR_NETWORK') return 'Cannot reach the server. Is the backend running?';
     return error.message;
   }

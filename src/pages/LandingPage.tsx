@@ -271,9 +271,7 @@ export default function LandingPage() {
             </div>
             <span className="font-semibold">{t('app.name')}</span>
           </div>
-          <p className="text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {t('app.name')} · {t('footer.madeIn')}
-          </p>
+          <p className="text-center text-xs text-muted-foreground">{t('footer.madeIn')}</p>
         </div>
       </footer>
     </div>

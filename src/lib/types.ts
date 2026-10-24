@@ -151,12 +151,13 @@ export interface AdminUser {
   phone: string;
   email: string;
   status: string;
-  bucket: 'active' | 'expiring' | 'expired' | 'suspended';
+  bucket: 'active' | 'expiring' | 'expired' | 'suspended' | 'pending' | 'rejected';
   registrationDate: string;
   subscriptionStart?: string;
   subscriptionEnd?: string;
   periodDays?: number;
   lastActiveAt?: string;
+  requestedSalonName?: string;
   salon: { _id: string; name: string; city?: string; status?: string } | null;
 }
 

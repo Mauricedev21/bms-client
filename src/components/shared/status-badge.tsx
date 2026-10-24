@@ -12,6 +12,7 @@ const TONES: Record<string, { variant: 'default' | 'destructive' | 'outline' | '
   void: { variant: 'secondary', dot: 'bg-muted-foreground' },
   cancelled: { variant: 'secondary', dot: 'bg-muted-foreground' },
   suspended: { variant: 'destructive', dot: 'bg-red-500' },
+  rejected: { variant: 'destructive', dot: 'bg-red-500' },
   expired: { variant: 'destructive', dot: 'bg-red-500' },
   overdue: { variant: 'destructive', dot: 'bg-red-500' },
   default: { variant: 'info', dot: 'bg-sky-500' },

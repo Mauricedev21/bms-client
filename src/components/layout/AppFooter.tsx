@@ -10,9 +10,7 @@ export function AppFooter() {
           <Scissors className="size-3.5 text-muted-foreground/70" />
           <span className="font-medium">{t('app.name')}</span>
         </div>
-        <p>
-          © {new Date().getFullYear()} {t('app.name')} · {t('footer.madeIn')}
-        </p>
+        <p>{t('footer.madeIn')}</p>
       </div>
     </footer>
   );

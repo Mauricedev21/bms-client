@@ -348,7 +348,7 @@ export default function BarbersPage() {
                             {b.status === 'active' ? <UserX className="h-4 w-4" /> : <UserCheck className="h-4 w-4" />}
                           </Button>
                           {b.stats.transactionCount === 0 && b.stats.activeLoans === 0 ? (
-                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive" onClick={() => setDeleteTarget(b)} title={t('common.delete')}>
+                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive" onClick={() => setDeleteTarget(b)} title={t('barbers.remove')}>
                               <Trash2 className="h-4 w-4" />
                             </Button>
                           ) : null}
@@ -408,7 +408,7 @@ export default function BarbersPage() {
                       <Banknote className="h-4 w-4" />
                     </Button>
                     {b.stats.transactionCount === 0 && b.stats.activeLoans === 0 ? (
-                      <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive" onClick={() => setDeleteTarget(b)} title={t('common.delete')}>
+                      <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive" onClick={() => setDeleteTarget(b)} title={t('barbers.remove')}>
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     ) : null}
@@ -453,7 +453,7 @@ export default function BarbersPage() {
         onOpenChange={(o) => { if (!o) setDeleteTarget(null); }}
         title={t('barbers.confirmDelete')}
         description={t('barbers.deleteHint')}
-        confirmLabel={t('common.delete')}
+        confirmLabel={t('barbers.remove')}
         loading={deleteMutation.isPending}
         onConfirm={() => deleteTarget && deleteMutation.mutate(deleteTarget._id)}
       />

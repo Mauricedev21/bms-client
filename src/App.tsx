@@ -21,7 +21,9 @@ import SettingsPage from '@/pages/manager/SettingsPage';
 import SupportPage from '@/pages/manager/SupportPage';
 
 import AdminDashboardPage from '@/pages/admin/AdminDashboardPage';
+import AdminRequestsPage from '@/pages/admin/AdminRequestsPage';
 import AdminUsersPage from '@/pages/admin/AdminUsersPage';
+import AdminActivityPage from '@/pages/admin/AdminActivityPage';
 import AdminRetentionPage from '@/pages/admin/AdminRetentionPage';
 
 import PortalDashboardPage from '@/pages/barber/PortalDashboardPage';
@@ -88,7 +90,9 @@ export default function App() {
       >
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminDashboardPage />} />
+          <Route path="/admin/requests" element={<AdminRequestsPage />} />
           <Route path="/admin/users" element={<AdminUsersPage />} />
+          <Route path="/admin/activity" element={<AdminActivityPage />} />
           <Route path="/admin/retention" element={<AdminRetentionPage />} />
         </Route>
       </Route>

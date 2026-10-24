@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: oklch(0.975 0.01 232);
   --foreground: oklch(0.22 0.04 262);
@@ -112,7 +110,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   html {
     font-family: var(--font-sans);
