@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { AppFooter } from '@/components/layout/AppFooter';
+import { InstallButton } from '@/components/shared/install-button';
 
 export default function BarberLayout() {
   const { t } = useLanguage();
@@ -22,6 +23,7 @@ export default function BarberLayout() {
         <Separator orientation="vertical" className="h-5" />
         <span className="hidden text-sm text-muted-foreground sm:inline">{barber?.name}</span>
         <div className="flex-1" />
+        <InstallButton />
         <NavLink to="/">
           <Button variant="ghost" size="sm">
             <Home className="h-4 w-4" />

@@ -16,6 +16,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Separator } from '@/components/ui/separator';
+import { InstallButton } from '@/components/shared/install-button';
 import { formatDate, initials, relativeTime } from '@/lib/utils';
 
 export function Topbar() {
@@ -29,6 +30,8 @@ export function Topbar() {
       <SidebarTrigger />
       <Separator orientation="vertical" className="h-5" />
       <div className="flex-1" />
+
+      <InstallButton />
 
       <Button variant="ghost" size="sm" onClick={toggle} className="gap-2 px-2 text-muted-foreground">
         {resolvedTheme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}

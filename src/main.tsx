@@ -7,7 +7,11 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthProvider } from '@/context/AuthContext';
 import { Toaster } from '@/components/ui/sonner';
 import App from './App';
+import { registerServiceWorker } from '@/lib/pwa';
 import './index.css';
+
+// PWA: make the app installable on phone/PC with an offline app shell.
+registerServiceWorker();
 
 const queryClient = new QueryClient({
   defaultOptions: {

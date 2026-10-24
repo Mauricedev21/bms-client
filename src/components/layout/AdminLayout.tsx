@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { AppFooter } from '@/components/layout/AppFooter';
+import { InstallButton } from '@/components/shared/install-button';
 import { initials } from '@/lib/utils';
 
 const adminNav = [
@@ -106,6 +107,7 @@ export default function AdminLayout() {
           <ShieldCheck className="h-4 w-4 text-primary" />
           <span className="text-sm font-semibold">{t('app.name')} Admin</span>
           <div className="flex-1" />
+          <InstallButton />
           <Button variant="outline" size="sm" onClick={logout}>
             <LogOut className="mr-2 h-4 w-4" />
             {t('auth.logout')}

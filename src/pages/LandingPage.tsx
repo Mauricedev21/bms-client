@@ -20,6 +20,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext';
 import { useAuth } from '@/context/AuthContext';
 import { FullScreenLoading } from '@/components/guards';
+import { InstallButton } from '@/components/shared/install-button';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -76,6 +77,7 @@ export default function LandingPage() {
             <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={toggle}>
               {resolvedTheme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
+            <InstallButton />
             <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
               <Link to="/login">{t('auth.login')}</Link>
             </Button>
