@@ -1,29 +1,22 @@
 # dependencies
 node_modules/
 
-# build output
+# builds
 dist/
-
-# TypeScript
 *.tsbuildinfo
 
-# env
+# env / secrets — NEVER commit
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # logs
+logs/
 *.log
 npm-debug.log*
 
-# editor / OS
-.vscode/
-.idea/
+# OS / editor
 .DS_Store
 Thumbs.db
-
-# test / coverage
-coverage/
-
-# misc
-.cache/
+.idea/
+.vscode/
