@@ -22,6 +22,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { initials } from '@/lib/utils';
 
+
+
 export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
   const { t } = useLanguage();
   const { logout, user, salon } = useAuth();
@@ -72,7 +74,7 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
         ))}
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter className="mt-auto pb-[env(safe-area-inset-bottom)]">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild tooltip={t('nav.support')}>
@@ -127,7 +129,7 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
-      <SidebarRail />
+      <SidebarRail className="z-20" />
     </Sidebar>
   );
 }
